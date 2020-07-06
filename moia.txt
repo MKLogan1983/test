@@ -132,7 +132,7 @@ Response:
   "orderNumber": "A12345",
   "mobilityServiceProviderOrderReference": "123456",
   "mspType": "SHUTTLE",
-  "activeUntil": "2020-07-03T06:17:24.601Z",
+  "activeUntil": "2020-07-03T07:27:47.548Z",
   "state": "AVAILABLE",
   "cancelReason": {
     "reason": "The customer has not been at the pickup stop.",
@@ -275,6 +275,7 @@ Response:
 }
 
 <<<<<HISTORY>>>>>
+Request:
 GET /orders
 Response:
 {
