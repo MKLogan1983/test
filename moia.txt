@@ -86,8 +86,8 @@ Response:
 }
 
 <<<<<ORDER>>>>>
-Request:
 POST /shuttles/orders
+Request:
 {
   "mobilityServiceProviderReference": "XYZ",
   "mobilityServiceProviderOfferReference": "UUID",
