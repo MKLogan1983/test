@@ -188,7 +188,7 @@ Response:
     "pickupTime": "2019-05-28T12:01:00Z",
     "deliveryTime": "2019-05-28T12:01:00Z",
     "destinationTime": "2019-05-28T12:01:00Z",
-    "phase": "WAITING"
+    "phase": "TO_PICKUP"
   },
   "order": {
     "shuttleMobilityServiceProvider": "MOIA",
