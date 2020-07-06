@@ -1,6 +1,6 @@
-<<<V1-START>>>
+<<<V2-START>>>
 <<<<<OFFER>>>>>
-POST /shuttles/{shuttleMobilityServiceProvider}/offers
+POST /shuttles/{shuttleMobilityServiceProvider}/offers/v2
 Request:
 {
   "childSeats": 0,
@@ -23,103 +23,74 @@ Request:
 
 Response:
 {
-  "shuttleMobilityServiceProvider": "MOIA",
-  "childSeats": 0,
-  
-  >>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT - DER WERT WIRD VON *Location + walkTo* ÜBERNOMMEN
-  "deliveryArea": {
-    "centerPoint": {
-      "latitude": 53.5358,
-      "longitude": 9.952722
-    },
-    "radiusInMeters": 150,
-    "walkingDurationMinInSeconds": 30,
-    "walkingDurationMaxInSeconds": 30
-  },
-  <<<
-  
-  "deliveryStop": {
-    "name": "Ringstraße 2A",
-    "coordinates": {
-      "latitude": 53.5358,
-      "longitude": 9.952722
-    },
-    "timeRange": {
-      "start": "2019-05-28T12:01:00Z",
-      "end": "2019-05-28T12:00:00Z"
+  "offers": [
+    {
+      "shuttleMobilityServiceProvider": "MOIA",
+      "childSeats": 0,
+      "deliveryArea": {
+        "centerPoint": {
+          "latitude": 53.5358,
+          "longitude": 9.952722
+        },
+        "radiusInMeters": 200,
+        "walkingDurationMinInSeconds": 200,
+        "walkingDurationMaxInSeconds": 300
+      },
+	  
+      "destinationLocation": {
+        "name": "Ringstraße 2A",
+        "coordinates": {
+          "latitude": 53.5358,
+          "longitude": 9.952722
+        }
+      },
+      "mobilityServiceProviderReference": "123456",
+      "mobilityServiceProviderOfferReference": "UUID",
+      "originLocation": {
+        "name": "Ringstraße 2A",
+        "coordinates": {
+          "latitude": 53.5358,
+          "longitude": 9.952722
+        }
+      },
+      "pickupArea": {
+        "centerPoint": {
+          "latitude": 53.5358,
+          "longitude": 9.952722
+        },
+        "radiusInMeters": 200,
+        "walkingDurationMinInSeconds": 200,
+        "walkingDurationMaxInSeconds": 300
+      },
+	  
+      "seats": 1,
+      "travelDurationInSeconds": 600,
+	  
+	  >>> DIE WERT WERDEN VON *Area ÜBERNOMMEN
+      "walkToDestination": {
+        "distanceInMeters": 150,
+        "durationInSeconds": 30
+      },
+      "walkToPickup": {
+        "distanceInMeters": 150,
+        "durationInSeconds": 30
+      },
+	  <<<
+      "price": {
+        "grossAmount": 123,
+        "vatPercent": 20,
+        "currency": "EUR"
+      }
     }
-  },
-  "destinationLocation": {
-    "name": "Ringstraße 2A",
-    "coordinates": {
-      "latitude": 53.5358,
-      "longitude": 9.952722
-    }
-  },
-  "mobilityServiceProviderReference": "123456",
-  
-  >>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
-  "mobilityServiceProviderOfferReference": "UUID",
-  <<<
-  
-  "originLocation": {
-    "name": "Ringstraße 2A",
-    "coordinates": {
-      "latitude": 53.5358,
-      "longitude": 9.952722
-    }
-  },
-  
-  >>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT - DER WERT WIRD VON *Location + walkTo* ÜBERNOMMEN
-  "pickupArea": {
-    "centerPoint": {
-      "latitude": 53.5358,
-      "longitude": 9.952722
-    },
-    "radiusInMeters": 150,
-    "walkingDurationMinInSeconds": 30,
-    "walkingDurationMaxInSeconds": 30
-  },
-  <<<
-  
-  "pickupStop": {
-    "name": "Ringstraße 2A",
-    "coordinates": {
-      "latitude": 53.5358,
-      "longitude": 9.952722
-    },
-    "timeRange": {
-      "start": "2019-05-28T12:01:00Z",
-      "end": "2019-05-28T12:00:00Z"
-    }
-  },
-  "seats": 1,
-  "travelDurationInSeconds": 600,
-  "walkToDestination": {
-    "distanceInMeters": 150,
-    "durationInSeconds": 30
-  },
-  "walkToPickup": {
-    "distanceInMeters": 150,
-    "durationInSeconds": 30
-  },
-  "price": {
-    "grossAmount": 123,
-    "vatPercent": 20,
-    "currency": "EUR"
-  }
+  ]
 }
 
 <<<<<ORDER>>>>>
-POST /shuttles/orders
 Request:
+POST /shuttles/orders
 {
   "mobilityServiceProviderReference": "XYZ",
-   
-   >>> WIRD IN V1 NICHT MIT GESENDET
   "mobilityServiceProviderOfferReference": "UUID",
-  <<<
-  
   "shuttleMobilityServiceProvider": "MOIA",
   "secureElement": "ABCDEFG"
 }
@@ -132,7 +103,7 @@ Response:
   "orderNumber": "A12345",
   "mobilityServiceProviderOrderReference": "123456",
   "mspType": "SHUTTLE",
-  "activeUntil": "2020-07-03T06:17:24.601Z",
+  "activeUntil": "2020-07-03T07:27:47.548Z",
   "state": "AVAILABLE",
   "cancelReason": {
     "reason": "The customer has not been at the pickup stop.",
@@ -148,53 +119,13 @@ Response:
   "lastStateUpdate": "2017-07-21T17:32:28Z",
   "pickedUpAt": "2019-05-28T12:01:00Z",
   "deliveredAt": "2019-05-28T12:01:00Z",
-  "vehicleId": "V-123456",
-  "vehicleLabel": "HH-Car-123",
+    
   "updates": {
-    "vehicleId": "V-123456",
-    "vehicleLabel": "HH-Car-123",
-    "vehicleCoordinate": {
-      "latitude": 53.5358,
-      "longitude": 9.952722
-    },
-    "vehicleLocationUpdatedAt": "2019-10-28T15:31:25Z",
-	
-	>>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
-    "pickupStop": {
-      "name": "Ringstraße 2A",
-      "coordinates": {
-        "latitude": 53.5358,
-        "longitude": 9.952722
-      },
-      "timeRange": {
-        "start": "2019-05-28T12:01:00Z",
-        "end": "2019-05-28T12:00:00Z"
-      }
-    },
-	
-    "deliveryStop": {
-      "name": "Ringstraße 2A",
-      "coordinates": {
-        "latitude": 53.5358,
-        "longitude": 9.952722
-      },
-      "timeRange": {
-        "start": "2019-05-28T12:01:00Z",
-        "end": "2019-05-28T12:00:00Z"
-      }
-    },
-	<<<
-	
-    "pickupTime": "2019-05-28T12:01:00Z",
-    "deliveryTime": "2019-05-28T12:01:00Z",
-    "destinationTime": "2019-05-28T12:01:00Z",
     "phase": "WAITING"
   },
   "order": {
     "shuttleMobilityServiceProvider": "MOIA",
     "childSeats": 0,
-	
-	>>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT - DER WERT WIRD VON *Location + walkTo* ÜBERNOMMEN
     "deliveryArea": {
       "centerPoint": {
         "latitude": 53.5358,
@@ -204,19 +135,7 @@ Response:
       "walkingDurationMinInSeconds": 200,
       "walkingDurationMaxInSeconds": 300
     },
-	<<<
 	
-    "deliveryStop": {
-      "name": "Ringstraße 2A",
-      "coordinates": {
-        "latitude": 53.5358,
-        "longitude": 9.952722
-      },
-      "timeRange": {
-        "start": "2019-05-28T12:01:00Z",
-        "end": "2019-05-28T12:00:00Z"
-      }
-    },
     "destinationLocation": {
       "name": "Ringstraße 2A",
       "coordinates": {
@@ -225,11 +144,7 @@ Response:
       }
     },
     "mobilityServiceProviderReference": "123456",
-	
-	>>> NULL -> WIRD ABER IN V1 IGNORIERT
     "mobilityServiceProviderOfferReference": "UUID",
-	<<<
-	
     "originLocation": {
       "name": "Ringstraße 2A",
       "coordinates": {
@@ -237,8 +152,6 @@ Response:
         "longitude": 9.952722
       }
     },
-	
-	>>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT - DER WERT WIRD VON *Location + walkTo* ÜBERNOMMEN
     "pickupArea": {
       "centerPoint": {
         "latitude": 53.5358,
@@ -248,19 +161,7 @@ Response:
       "walkingDurationMinInSeconds": 200,
       "walkingDurationMaxInSeconds": 300
     },
-	<<<
 	
-    "pickupStop": {
-      "name": "Ringstraße 2A",
-      "coordinates": {
-        "latitude": 53.5358,
-        "longitude": 9.952722
-      },
-      "timeRange": {
-        "start": "2019-05-28T12:01:00Z",
-        "end": "2019-05-28T12:00:00Z"
-      }
-    },
     "seats": 1,
     "travelDurationInSeconds": 600,
     "walkToDestination": {
@@ -275,6 +176,7 @@ Response:
 }
 
 <<<<<HISTORY>>>>>
+Request:
 GET /orders
 Response:
 {
@@ -302,22 +204,16 @@ Response:
       "lastStateUpdate": "2017-07-21T17:32:28Z",
       "pickedUpAt": "2019-05-28T12:01:00Z",
       "deliveredAt": "2019-05-28T12:01:00Z",
-	  "vehicleId": "V-123456",
+	  "vehicleId": "V-123456"
 	  "vehicleLabel": "HH-Car-123",
       "updates": {
-	  
-		>>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
         "vehicleId": "V-123456",
         "vehicleLabel": "HH-Car-123",
-		<<<
-		
         "vehicleCoordinate": {
           "latitude": 53.5358,
           "longitude": 9.952722
         },
         "vehicleLocationUpdatedAt": "2019-10-28T15:31:25Z",
-		
-		>>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
         "pickupStop": {
           "name": "Ringstraße 2A",
           "coordinates": {
@@ -340,8 +236,6 @@ Response:
             "end": "2019-05-28T12:00:00Z"
           }
         },
-		<<<
-
         "pickupTime": "2019-05-28T12:01:00Z",
         "deliveryTime": "2019-05-28T12:01:00Z",
         "destinationTime": "2019-05-28T12:01:00Z",
@@ -349,8 +243,6 @@ Response:
       },
       "order": {
         "childSeats": 0,
-		
-		>>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
         "deliveryArea": {
           "centerPoint": {
             "latitude": 53.5358,
@@ -360,8 +252,6 @@ Response:
           "walkingDurationMinInSeconds": 200,
           "walkingDurationMaxInSeconds": 300
         },
-		<<<
-		
         "deliveryStop": {
           "name": "Ringstraße 2A",
           "coordinates": {
@@ -381,11 +271,7 @@ Response:
           }
         },
         "mobilityServiceProviderReference": "123456",
-		
-		>>> NULL -> WIRD ABER IN V1 IGNORIERT
         "mobilityServiceProviderOfferReference": "UUID",
-		<<<
-		
         "originLocation": {
           "name": "Ringstraße 2A",
           "coordinates": {
@@ -393,8 +279,6 @@ Response:
             "longitude": 9.952722
           }
         },
-		
-		>>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
         "pickupArea": {
           "centerPoint": {
             "latitude": 53.5358,
@@ -404,8 +288,6 @@ Response:
           "walkingDurationMinInSeconds": 200,
           "walkingDurationMaxInSeconds": 300
         },
-		<<<
-		
         "pickupStop": {
           "name": "Ringstraße 2A",
           "coordinates": {
@@ -438,5 +320,4 @@ Response:
   "numberOfElements": 1,
   "first": true
 }
-
-<<<V1-ENDE>>>
+<<<V2-ENDE>>>
