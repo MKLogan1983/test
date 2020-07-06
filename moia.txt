@@ -204,7 +204,7 @@ Response:
       "lastStateUpdate": "2017-07-21T17:32:28Z",
       "pickedUpAt": "2019-05-28T12:01:00Z",
       "deliveredAt": "2019-05-28T12:01:00Z",
-	  "vehicleId": "V-123456"
+	  "vehicleId": "V-123456",
 	  "vehicleLabel": "HH-Car-123",
       "updates": {
         "vehicleId": "V-123456",
