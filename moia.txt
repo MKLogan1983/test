@@ -36,7 +36,10 @@ Response:
         "walkingDurationMinInSeconds": 200,
         "walkingDurationMaxInSeconds": 300
       },
-	  
+      "deliveryTimeRange": {
+        "start": "2019-05-28T12:01:00Z",
+        "end": "2019-05-28T12:00:00Z"
+      }
       "destinationLocation": {
         "name": "Ringstraße 2A",
         "coordinates": {
@@ -62,7 +65,10 @@ Response:
         "walkingDurationMinInSeconds": 200,
         "walkingDurationMaxInSeconds": 300
       },
-	  
+      "pickupTimeRange": {
+        "start": "2019-05-28T12:01:00Z",
+        "end": "2019-05-28T12:00:00Z"
+      }
       "seats": 1,
       "travelDurationInSeconds": 600,
 	  
@@ -135,7 +141,10 @@ Response:
       "walkingDurationMinInSeconds": 200,
       "walkingDurationMaxInSeconds": 300
     },
-	
+    "deliveryTimeRange": {
+       "start": "2019-05-28T12:01:00Z",
+       "end": "2019-05-28T12:00:00Z"
+    },
     "destinationLocation": {
       "name": "Ringstraße 2A",
       "coordinates": {
@@ -161,7 +170,10 @@ Response:
       "walkingDurationMinInSeconds": 200,
       "walkingDurationMaxInSeconds": 300
     },
-	
+    "pickupTimeRange": {
+       "start": "2019-05-28T12:01:00Z",
+       "end": "2019-05-28T12:00:00Z"
+    },
     "seats": 1,
     "travelDurationInSeconds": 600,
     "walkToDestination": {
@@ -219,10 +231,6 @@ Response:
           "coordinates": {
             "latitude": 53.5358,
             "longitude": 9.952722
-          },
-          "timeRange": {
-            "start": "2019-05-28T12:01:00Z",
-            "end": "2019-05-28T12:00:00Z"
           }
         },
         "deliveryStop": {
@@ -230,10 +238,6 @@ Response:
           "coordinates": {
             "latitude": 53.5358,
             "longitude": 9.952722
-          },
-          "timeRange": {
-            "start": "2019-05-28T12:01:00Z",
-            "end": "2019-05-28T12:00:00Z"
           }
         },
         "pickupTime": "2019-05-28T12:01:00Z",
@@ -251,6 +255,10 @@ Response:
           "radiusInMeters": 200,
           "walkingDurationMinInSeconds": 200,
           "walkingDurationMaxInSeconds": 300
+        },
+        "deliveryTimeRange": {
+           "start": "2019-05-28T12:01:00Z",
+           "end": "2019-05-28T12:00:00Z"
         },
         "deliveryStop": {
           "name": "Ringstraße 2A",
@@ -287,6 +295,10 @@ Response:
           "radiusInMeters": 200,
           "walkingDurationMinInSeconds": 200,
           "walkingDurationMaxInSeconds": 300
+        },
+        "pickupTimeRange": {
+           "start": "2019-05-28T12:01:00Z",
+           "end": "2019-05-28T12:00:00Z"
         },
         "pickupStop": {
           "name": "Ringstraße 2A",
