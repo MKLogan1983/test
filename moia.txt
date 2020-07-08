@@ -37,6 +37,12 @@ Response:
     "walkingDurationMaxInSeconds": 30
   },
   <<<
+  >>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
+  "deliveryTimeRange": {
+      "start": "2019-05-28T12:01:00Z",
+      "end": "2019-05-28T12:00:00Z"
+  }
+  <<<
   
   "deliveryStop": {
     "name": "Ringstraße 2A",
@@ -80,6 +86,12 @@ Response:
     "walkingDurationMinInSeconds": 30,
     "walkingDurationMaxInSeconds": 30
   },
+  <<<
+  >>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
+  "pickupTimeRange": {
+      "start": "2019-05-28T12:01:00Z",
+      "end": "2019-05-28T12:00:00Z"
+  }
   <<<
   
   "pickupStop": {
@@ -205,7 +217,12 @@ Response:
       "walkingDurationMaxInSeconds": 300
     },
 	<<<
-	
+   >>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
+  "deliveryTimeRange": {
+      "start": "2019-05-28T12:01:00Z",
+      "end": "2019-05-28T12:00:00Z"
+  }
+  <<<
     "deliveryStop": {
       "name": "Ringstraße 2A",
       "coordinates": {
@@ -249,7 +266,12 @@ Response:
       "walkingDurationMaxInSeconds": 300
     },
 	<<<
-	
+    >>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
+    "pickupTimeRange": {
+      "start": "2019-05-28T12:01:00Z",
+      "end": "2019-05-28T12:00:00Z"
+    }
+    <<<
     "pickupStop": {
       "name": "Ringstraße 2A",
       "coordinates": {
@@ -325,21 +347,14 @@ Response:
             "latitude": 53.5358,
             "longitude": 9.952722
           },
-          "timeRange": {
-            "start": "2019-05-28T12:01:00Z",
-            "end": "2019-05-28T12:00:00Z"
-          }
         },
+	
         "deliveryStop": {
           "name": "Ringstraße 2A",
           "coordinates": {
             "latitude": 53.5358,
             "longitude": 9.952722
           },
-          "timeRange": {
-            "start": "2019-05-28T12:01:00Z",
-            "end": "2019-05-28T12:00:00Z"
-          }
         },
 		<<<
 
@@ -362,7 +377,12 @@ Response:
           "walkingDurationMaxInSeconds": 300
         },
 		<<<
-		
+        >>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
+        "deliveryTimeRange": {
+           "start": "2019-05-28T12:01:00Z",
+           "end": "2019-05-28T12:00:00Z"
+        }
+        <<<
         "deliveryStop": {
           "name": "Ringstraße 2A",
           "coordinates": {
@@ -406,7 +426,12 @@ Response:
           "walkingDurationMaxInSeconds": 300
         },
 		<<<
-		
+        >>> WIRD ZWAR GESENDET -> WIRD ABER IN V1 IGNORIERT
+        "pickupTimeRange": {
+           "start": "2019-05-28T12:01:00Z",
+           "end": "2019-05-28T12:00:00Z"
+        }
+        <<<	
         "pickupStop": {
           "name": "Ringstraße 2A",
           "coordinates": {
